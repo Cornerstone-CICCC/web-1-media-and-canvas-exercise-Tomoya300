@@ -4,20 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      background-image: url(./assets/images/background.jpg);
+      background-size: 250%;
+      background-position: center bottom;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-color: rgb(16, 234, 16);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .audio {
+      margin: 40px 0;
+    }
+
+    .video {
+      margin: 40px 0;
+    }
+
+    .imageMap {
+      margin: 40px 0;
+    }
+
+    .imageMap img {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      object-fit: contain;
+
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+    <div class="audio">
+      <audio src="./assets/audio/piano.wav" controls muted loop>
+        <p>Your browser does not support the audio element.</p>
+      </audio>
+    </div>
+    <div class="video">
+      <video src="./assets/video/ocean.mp4" controls width="640px">
+        <p>Your browser does not support the video element.</p>
+      </video>
+    </div>
+    <div class="imageMap">
+      <img src="./assets/images/fruit_table.jpg" alt="fruit table" usemap="#table">
+    </div>
 
-    <!-- VIDEO HTML GOES HERE -->
-
-    <!-- IMAGE MAP HTML GOES HERE-->
-
-    <!-- CANVAS HTML GOES HERE -->
+    <map name="table">
+      <area shape="rect" coords="50, 50, 300, 600" href="https://en.wikipedia.org/wiki/Lavandula" alt="Lavender flowers" target="_blank">
+      <area shape="rect" coords="350, 360, 600, 650" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="Orange" target="_blank">
+      <area shape="circle" coords="500, 250, 150" href="https://en.wikipedia.org/wiki/Coffee" alt="Coffee" target="_blank">
+    </map>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
   </div>
 
   <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
+    let canvas = document.getElementById('myCanvas')
+    let context = canvas.getContext("2d")
+
+    context.strokeStyle = "#429955"
+    context.lineWidth = "5"
+    context.beginPath()
+    context.moveTo(150, 150)
+    context.lineTo(350, 150)
+    context.stroke()
+
+    context.strokeStyle = "purple"
+    context.lineWidth = "5"
+    context.beginPath()
+    context.moveTo(350, 150)
+    context.lineTo(350, 350)
+    context.stroke()
+
+    context.strokeStyle = "blue"
+    context.lineWidth = "5"
+    context.beginPath()
+    context.moveTo(350, 350)
+    context.lineTo(150, 350)
+    context.stroke()
+
+    context.strokeStyle = "pink"
+    context.lineWidth = "5"
+    context.beginPath()
+    context.moveTo(150, 350)
+    context.lineTo(150, 150)
+    context.stroke()
+    
   </script>
 </body>
 </html>
