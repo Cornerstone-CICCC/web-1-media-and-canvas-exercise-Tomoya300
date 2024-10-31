@@ -45,6 +45,9 @@
       object-fit: contain;
 
     }
+    canvas {
+      margin: 40px 0;
+    }
   </style>
 </head>
 <body>
@@ -74,6 +77,10 @@
   <script>
     let canvas = document.getElementById('myCanvas')
     let context = canvas.getContext("2d")
+
+    context.rect(0, 0, 500, 500)
+    context.fillStyle = "#ccffff"
+    context.fill()
 
     context.strokeStyle = "#429955"
     context.lineWidth = "5"
